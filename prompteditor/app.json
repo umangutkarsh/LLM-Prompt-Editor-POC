@@ -1,0 +1,54 @@
+{
+    "id": "77646d07-ac62-4570-98cb-40991c52084a",
+    "version": "0.0.1",
+    "requiredApiVersion": "^1.19.0",
+    "iconFile": "icon.png",
+    "author": {
+        "name": "Umang Utkarsh",
+        "homepage": "NA",
+        "support": "NA"
+    },
+    "name": "PromptEditor",
+    "nameSlug": "prompteditor",
+    "classFile": "PromptEditorApp.ts",
+    "description": "A POC for llm-prompt-editor-app",
+    "implements": [],
+    "permissions": [
+        {
+            "name": "ui.registerButtons"
+        },
+        {
+            "name": "api"
+        },
+        {
+            "name": "slashcommand"
+        },
+        {
+            "name": "server-setting.read"
+        },
+        {
+            "name": "room.read"
+        },
+        {
+            "name": "persistence"
+        },
+        {
+            "name": "ui.interact"
+        },
+        {
+            "name": "networking"
+        },
+        {
+            "name": "message.write"
+        },
+        {
+            "name": "user.read"
+        },
+        {
+            "name": "room.write"
+        },
+        {
+            "name": "message.read"
+        }
+    ]
+}
