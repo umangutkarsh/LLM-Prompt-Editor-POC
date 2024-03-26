@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from "fs";
 import { compress } from "brotli";
 
-let jsCode = readFileSync("./dist/_nuxt/DJ-LLF8i.js", "utf8");
+let jsCode = readFileSync("./dist/_nuxt/D3rLC7TF.js", "utf8");
 
 let htmlBuffer = Buffer.from(jsCode, "utf8");
 

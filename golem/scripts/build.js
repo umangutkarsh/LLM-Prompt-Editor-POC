@@ -253,16 +253,16 @@ let compressed = compress(htmlBuffer, {
    lgwin: 22,
 });
 
-let base64Compressed = `export const compressedString=\`${Buffer.from(
+let base64Compressed = `export const compressedGolemString=\`${Buffer.from(
    compressed
 ).toString("base64")}\``;
 
-let compressedHtml = `export const compressedContent=\`${readFileSync(
-   "./dist/chat/index.html",
+let compressedHtml = `export const compressedGolemContent=\`${readFileSync(
+   "./dist/404.html",
    "utf8"
 )}\``;
 
-writeFileSync("../prompteditor/assets/compressedContent.ts", compressedHtml);
-writeFileSync("../prompteditor/assets/compress.ts", base64Compressed);
+writeFileSync("../prompteditor/assets/compressedGolemContent.ts", compressedHtml);
+writeFileSync("../prompteditor/assets/compressedGolem.ts", base64Compressed);
 
 console.log("Built at", new Date().toLocaleString());

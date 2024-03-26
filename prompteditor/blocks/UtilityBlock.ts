@@ -6,6 +6,7 @@ import { Block, SectionBlock } from '@rocket.chat/ui-kit';
 export async function buildHeaderBlock(
     username: string,
     promptURL: string,
+    nuxtURL: string,
     appId: string,
 ): Promise<Array<Block>> {
     const block: Block[] = [];
@@ -19,11 +20,22 @@ export async function buildHeaderBlock(
         promptURL,
     );
 
+    const nuxtButton = getButton(
+        "Nuxt App",
+        UtilityEnum.PREVIEW_BLOCK_ID,
+        UtilityEnum.NUXT_BUTTON_ACTION_ID,
+        appId,
+        `Nuxt ${nuxtURL}`,
+        ButtonStyle.PRIMARY,
+        nuxtURL,
+    );
+
     let markdownBlock: SectionBlock;
         markdownBlock = getMarkdownBlock(`Prompt created by *\`@${username}\`*`);
 
     const actionBlock = getActionsBlock(UtilityEnum.PREVIEW_BLOCK_ID, [
         promptButton,
+        nuxtButton,
     ]);
     block.push(markdownBlock);
     block.push(actionBlock);

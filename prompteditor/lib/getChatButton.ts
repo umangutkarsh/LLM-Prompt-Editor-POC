@@ -16,14 +16,17 @@ export async function getChatButton(
 ) {
     const endpoints = app.getAccessors().providedApiEndpoints;
     console.log('Endpoints: ', endpoints);
-    console.log('Endpoints1: ', endpoints[1]);
+    console.log('Endpoints1: ', endpoints[0]);
+    console.log('Endpoints2: ', endpoints[2]);
 
 
-    const PromptEndpoint = endpoints[1];
+    const PromptEndpoint = endpoints[0];
+    const NuxtEndpoint = endpoints[2];
     const appId = app.getID();
 
     const randomMessageId = randomId();
-    const promptURL = `${PromptEndpoint.computedPath}?id=${randomMessageId}`
+    const promptURL = `${PromptEndpoint.computedPath}?id=${randomMessageId}`;
+    const nuxtURL = `${NuxtEndpoint.computedPath}?id=${randomMessageId}`;
     const appUser = (await read.getUserReader().getAppUser()) as IUser;
     const sender = context.getSender();
     const room = context.getRoom();
@@ -31,6 +34,7 @@ export async function getChatButton(
     const headerBlock = await buildHeaderBlock(
         sender.username,
         promptURL,
+        nuxtURL,
         appId,
     );
     const messageId = await sendMessage(
